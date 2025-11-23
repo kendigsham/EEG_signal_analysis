@@ -23,7 +23,7 @@ import seaborn as sns
 import pickle
 
 
-dir_data='/home/kenny/Documents/courses/Individual_project/linear_models/Jasna_dat_try2_GFP_input'
+dir_data='/path/to/your/data/training_linear_regression/data_GFP_input'
 
 df_data = pd.read_csv(f'{dir_data}/condition_3__GFP_data/df_combined_condition_3__GFP_all_times.csv',index_col=0)
 
@@ -32,7 +32,7 @@ df_data.head()
 df_data.shape  ## (59271, 54)
 
 
-data_dir = '/home/kenny/Documents/courses/Individual_project/linear_models/Jasna_data'
+data_dir = '/path/to/your/data/linear_models/data'
 
 dir_y_values = f'{data_dir}/df__y_data__mean_GFP.csv'
 
@@ -55,7 +55,7 @@ df_y_values.shape   ## (59271, 4)
 
 
 
-y_label_dir='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try4_correct_number_of_event_type'
+y_label_dir='/path/to/your/data/classification_models/data/correct_number_of_event_type'
 
 with open (f'{y_label_dir}/all_event_list.pickle', 'rb') as fp:
     all_event_list = pickle.load(fp)

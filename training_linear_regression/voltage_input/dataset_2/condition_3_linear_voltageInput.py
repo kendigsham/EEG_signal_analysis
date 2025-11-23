@@ -25,7 +25,7 @@ import seaborn as sns
 
 
 
-dir_base_X='/home/kenny/Documents/courses/Individual_project/classification_models/ERP_core'
+dir_base_X='/path/to/your/data/classification_models/ERP_core'
 
 
 df_data = pd.read_csv(f'{dir_base_X}/condition_3__data/df_combined_condition_3__mean_channel_all_times.csv',index_col=0)
@@ -35,7 +35,7 @@ df_data.head()
 df_data.shape  ## (23013, 4)
 
 
-dir_base_y='/home/kenny/Documents/courses/Individual_project/linear_models/ERP_core__GFP_input'
+dir_base_y='/path/to/your/data/linear_models/ERP_core__GFP_input'
 
 dir_y_values = f'{dir_base_y}/df__y_values_reject_subject_N_trial.csv'
 

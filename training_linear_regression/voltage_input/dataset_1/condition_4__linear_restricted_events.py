@@ -23,7 +23,7 @@ import seaborn as sns
 import pickle
 
 
-base_data_dir = '/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try3_downsample_threshold'
+base_data_dir = '/path/to/your/data/classification_models/data/downsample_threshold'
 
 
 
@@ -42,7 +42,7 @@ df_data.shape  ## (59271, 3267)
 
 # df_data['y_data'] =df_data['participant'].map(dict_threshold)
 
-dir_linear = '/home/kenny/Documents/courses/Individual_project/linear_models/Jasna_data'
+dir_linear = '/path/to/your/data/linear_models/data'
 
 dir_y_values = f'{dir_linear}/df__y_data__mean_GFP.csv'
 
@@ -62,7 +62,7 @@ df_y_values.shape   ## (59271, 4)
 
 
 
-y_label_dir='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try4_correct_number_of_event_type'
+y_label_dir='/path/to/your/data/classification_models/data/correct_number_of_event_type'
 
 with open (f'{y_label_dir}/all_event_list.pickle', 'rb') as fp:
     all_event_list = pickle.load(fp)
