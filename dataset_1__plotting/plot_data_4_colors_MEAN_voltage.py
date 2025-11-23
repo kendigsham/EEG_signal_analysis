@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Sat Aug 10 16:48:53 2024
+Created on Sat Aug 10 17:26:35 2024
 
 @author: kenny
 """
-
 
 
 
@@ -28,11 +27,11 @@ import pickle
 import os
 
 
-dir_base = '/home/kenny/Documents/courses/Individual_project/Analysis'
+dir_base = '/path/to/dataset_1__preprocessed_data'
 
 
 
-df_mean_std = pd.read_csv(f'{dir_base}/try3_average_participant.csv',index_col=0)
+df_mean_std = pd.read_csv(f'{dir_base}/average_participant.csv',index_col=0)
 
 df_mean_std.shape
 
@@ -69,16 +68,16 @@ def make_dataframe_plot(color_first, color_second):
         stand_2__color1 = df_mean_std[df_mean_std.type == type_first]
         stand_2__color2 = df_mean_std[df_mean_std.type == type_second]
         
-        
-        stacked = np.stack((stand_2__color1['std'].values, stand_2__color2['std'].values),axis=1)
+        #################################################
+        stacked = np.stack((stand_2__color1['mean'].values, stand_2__color2['mean'].values),axis=1) ### changing to mean here
         
         mean_numpy = np.mean(stacked,axis=1)
         
         new_dataframe = stand_2__color1.copy()
         
-        new_dataframe['color2_std'] = stand_2__color2['std'].values
+        new_dataframe['color2_mean'] = stand_2__color2['mean'].values
         
-        new_dataframe['mean_2colors'] = mean_numpy
+        new_dataframe['mean_voltage'] = mean_numpy ## this is actuall
         
         new_dataframe['types_2'] = [f'{type_first}_{type_second}']*mean_numpy.shape[0]
     
@@ -201,25 +200,25 @@ axes = axes.flatten()
 # blue_palette = sns.color_palette("Blues",n_colors=8)
 # blue_palette.reverse()
 
-sns.lineplot(data=df_1_2, x='time',y='mean_2colors', ax=axes[0], hue='events', palette='Blues' , style='events',
+sns.lineplot(data=df_1_2, x='time',y='mean_voltage', ax=axes[0], hue='events', palette='Blues' , style='events',
              dashes=[(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0), (2, 2)])
 
 handles1, labels1 = axes[0].get_legend_handles_labels()
 axes[0].legend(handles=handles1, labels=labels1)
 
-sns.lineplot(data=df_3_4, x='time',y='mean_2colors', ax=axes[1], hue='events', palette='Greens', style='events',
+sns.lineplot(data=df_3_4, x='time',y='mean_voltage', ax=axes[1], hue='events', palette='Greens', style='events',
              dashes=[(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0), (2, 2)] )
 
 handles2, labels2 = axes[1].get_legend_handles_labels()
 axes[1].legend(handles=handles2, labels=labels2)
 
-sns.lineplot(data=df_5_6, x='time',y='mean_2colors', ax=axes[2], hue='events', palette='Reds', style='events',
+sns.lineplot(data=df_5_6, x='time',y='mean_voltage', ax=axes[2], hue='events', palette='Reds', style='events',
              dashes=[(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0), (2, 2)] )
 
 handles3, labels3 = axes[2].get_legend_handles_labels()
 axes[2].legend(handles=handles2, labels=labels2)
 
-sns.lineplot(data=df_7_8, x='time',y='mean_2colors', ax=axes[3], hue='events', palette='YlOrBr', style='events',
+sns.lineplot(data=df_7_8, x='time',y='mean_voltage', ax=axes[3], hue='events', palette='YlOrBr', style='events',
              dashes=[(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0),(1, 0), (2, 2)] )
 
 handles4, labels4 = axes[3].get_legend_handles_labels()
@@ -227,14 +226,14 @@ axes[3].legend(handles=handles4, labels=labels4)
 
 
 axes[0].set_title('blue')
-axes[0].set_ylabel('GFP (Voltage)')
+axes[0].set_ylabel('Mean (Voltage)')
 axes[0].axvline(x=0, linewidth=1, color='black',  linestyle = '--')
 
 axes[1].set_title('green')
 axes[1].axvline(x=0, linewidth=1, color='black',  linestyle = '--')
 
 axes[2].set_title('red/pink')
-axes[2].set_ylabel('GFP (Voltage)')
+axes[2].set_ylabel('Mean (Voltage)')
 axes[2].axvline(x=0, linewidth=1, color='black',  linestyle = '--')
 axes[2].set_xlabel('time (s)')
 
@@ -242,11 +241,11 @@ axes[3].set_title('brown/yellow')
 axes[3].axvline(x=0, linewidth=1, color='black',  linestyle = '--')
 axes[3].set_xlabel('time (s)')
 
-fig.suptitle('The GFP of all colors for Dataset 1', fontsize=15)
+fig.suptitle('The Mean of all colors for Dataset 1', fontsize=15)
 
 fig.tight_layout()
 
-plt.savefig('Jasna_plots/GFP_4_colors_Jasna_data.pdf')
+plt.savefig('plots/MEAN_4_colors_data.pdf')
 # plt.show()
 
 
