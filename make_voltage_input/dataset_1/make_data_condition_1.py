@@ -28,7 +28,7 @@ import mne
 
 
 
-edited_file_list = glob.glob('/home/kenny/OneDrive/Thierry_Data/dataedited/*_ALL70_interpol.set')
+edited_file_list = glob.glob('/path/to/dataedited/*_ALL70_interpol.set')
 
 len(edited_file_list)
 
