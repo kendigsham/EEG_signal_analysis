@@ -6,8 +6,6 @@ Created on Sat Aug  3 15:57:11 2024
 @author: kenny
 """
 
-### this is copied from classification_models/Jasna_data/try3_downsample_threshold/using_MEDIAN/make_per_trial_Y_label_MEDIAN_try1_result.py
-
 
 
 import numpy as np
@@ -30,14 +28,14 @@ import mne
 
 
 
-edited_file_list = glob.glob('/home/kenny/OneDrive/Thierry_Data/dataedited/*_ALL70_interpol.set')
+edited_file_list = glob.glob('/path/to/dataset_1__preprocessed_data/**/*_ALL70_interpol.set')
 
 len(edited_file_list)
 
 edited_file_list[:5]
 
 
-temp_dir = '~/Documents/courses/Individual_project/classification_models/Jasna_data/try3_downsample_threshold/using_MEDIAN'
+temp_dir = '/path/to/temp/downsample_threshold/using_MEDIAN'
 
 df_GFP = pd.read_csv(f'{temp_dir}/downSample_GFP_MEDIAN_per_participant.csv',index_col=0)
 
