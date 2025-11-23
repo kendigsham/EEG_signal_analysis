@@ -24,7 +24,7 @@ import seaborn as sns
 import pickle
 
 
-x_data_dir = '~/Documents/courses/Individual_project/linear_models/Jasna_dat_try2_GFP_input/condition_1__GFP_data'
+x_data_dir = '/path/to/your/data/linear_models/data_GFP_input/condition_1__GFP_data'
 
 
 df_data = pd.read_csv(f'{x_data_dir}/df_combined_condition_1__mean_GFP_time.csv',index_col=0)
@@ -35,9 +35,9 @@ df_data.shape  ## (59271, 4)
 
 
 
-y_label_dir='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try4_correct_number_of_event_type'
+y_label_dir='/path/to/your/data/classification_models/correct_number_of_event_type'
 
-dir_y_label = f'{y_label_dir}/try_4_df_MEDIAN_y_label.csv'
+dir_y_label = f'{y_label_dir}/df_MEDIAN_y_label.csv'
 
 
 df_y_label = pd.read_csv(dir_y_label,index_col=0)

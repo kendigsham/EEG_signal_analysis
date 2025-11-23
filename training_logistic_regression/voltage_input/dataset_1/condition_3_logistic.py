@@ -25,7 +25,7 @@ import pickle
 
 
 
-dir_data='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try3_downsample_threshold'
+dir_data='/path/to/your/classification_models/data/downsample_threshold'
 
 df_data = pd.read_csv(f'{dir_data}/condition_3__data/df_combined_condition_3__mean_channel_all_times.csv',index_col=0)
 
@@ -35,7 +35,7 @@ df_data.shape  ## (59271, 54)
 
 
 
-df_y_label = pd.read_csv('try_4_df_MEDIAN_y_label.csv',index_col=0)
+df_y_label = pd.read_csv('df_MEDIAN_y_label.csv',index_col=0)
 
 
 
@@ -137,9 +137,6 @@ Counter(y_pred_balance)  ### {0: 128805}      #### does not look good here
 
 
 
-
-########################
-#  https://www.datacamp.com/tutorial/understanding-logistic-regression-python?dc_referrer=https%3A%2F%2Fwww.google.com%2F
 #########################
 
 
@@ -160,7 +157,7 @@ plt.tight_layout()
 plt.title('Confusion matrix', y=1.1)
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
-plt.savefig('condition_3__plots/condition_3_confusion_matrix_try4.pdf', bbox_inches='tight')
+plt.savefig('condition_3__plots/condition_3_confusion_matrix.pdf', bbox_inches='tight')
 # plt.show()
 
 # Text(0.5,257.44,'Predicted label');
@@ -180,7 +177,7 @@ auc = metrics.roc_auc_score(y_test, y_pred_proba)
 plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
 plt.legend(loc=4)
 plt.title('ROC curve')
-plt.savefig('condition_3__plots/condition_3_ROC_curve_try4.pdf', bbox_inches='tight')
+plt.savefig('condition_3__plots/condition_3_ROC_curve.pdf', bbox_inches='tight')
 # plt.show()
 
 
@@ -210,7 +207,7 @@ print(f"Accuracy: {accuracy:.2f}")
 
 
 # Write accuracy to a file
-with open("condition_3__accuracy_try4.txt", "w") as file:
+with open("condition_3__accuracy.txt", "w") as file:
     file.write(f"Accuracy: {accuracy:.5f}\n")
 
 
@@ -229,15 +226,15 @@ y_pred_proba = logreg.predict_proba(X_test)[::,1]
 
 import pickle
 
-with open('condition_3__stuff_plots/cnf_matrix_try4.pickle', 'wb') as handle:
+with open('condition_3__stuff_plots/cnf_matrix.pickle', 'wb') as handle:
     pickle.dump(cnf_matrix, handle)
 
 
-with open('condition_3__stuff_plots/y_pred_proba_try4.pickle', 'wb') as handle:
+with open('condition_3__stuff_plots/y_pred_proba.pickle', 'wb') as handle:
     pickle.dump(y_pred_proba, handle)
 
 
-with open('condition_3__stuff_plots/y_test_try4.pickle', 'wb') as handle:
+with open('condition_3__stuff_plots/y_test.pickle', 'wb') as handle:
     pickle.dump(y_test, handle)
 
 

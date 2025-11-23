@@ -6,10 +6,6 @@ Created on Wed Aug  7 10:39:48 2024
 @author: kenny
 """
 
-### Individual_project/classification_models/Jasna_data/try3_downsample_threshold/condition_1__train_logistic_regression.py
-
-
-
 
 import numpy as np
 import pandas as pd
@@ -27,7 +23,7 @@ import seaborn as sns
 import pickle
 
 
-dir_data='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try3_downsample_threshold'
+dir_data='/path/to/your/classification_models/data/downsample_threshold'
 
 df_data = pd.read_csv(f'{dir_data}/condition_1__data/df_combined_condition_1__mean_channel_mean_time.csv',index_col=0)
 
@@ -36,7 +32,7 @@ df_data.head()
 df_data.shape  ## (59271, 4)
 
 
-dir_y_label = 'try_4_df_MEDIAN_y_label.csv'
+dir_y_label = 'df_MEDIAN_y_label.csv'
 
 
 df_y_label = pd.read_csv(dir_y_label,index_col=0)
@@ -191,7 +187,7 @@ auc = metrics.roc_auc_score(y_test, y_pred_proba)
 plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
 plt.legend(loc=4)
 plt.title('ROC curve')
-plt.savefig('condition_1__plots/condition_1_ROC_curve__try4.pdf', bbox_inches='tight')
+plt.savefig('condition_1__plots/condition_1_ROC_curve.pdf', bbox_inches='tight')
 # plt.show()
 
 

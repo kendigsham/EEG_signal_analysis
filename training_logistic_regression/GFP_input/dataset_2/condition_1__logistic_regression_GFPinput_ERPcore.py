@@ -24,7 +24,7 @@ import seaborn as sns
 
 
 
-dir_x_data = '/home/kenny/Documents/courses/Individual_project/linear_models/ERP_core__GFP_input/condition_1__GFP_data'
+dir_x_data = '/path/to/your/data/linear_models/ERP_core__GFP_input/condition_1__GFP_data'
 
 df_data = pd.read_csv(f'{dir_x_data}/df_combined_condition_1__GFP_mean_time.csv',index_col=0)
 
@@ -34,7 +34,7 @@ df_data.shape  ## (23013, 4)
 
 
 
-dir_base_data_y='/home/kenny/Documents/courses/Individual_project/classification_models/ERP_core/try3__ss2_get_threshold_for_training'
+dir_base_data_y='/path/to/your/data/classification_models/ERP_core/ss2_get_threshold_for_training'
 
 dir_y_label = f'{dir_base_data_y}/df_MEDIAN_y_label_reject_subject_N_trial.csv'
 
@@ -127,12 +127,7 @@ Counter(y_pred_balance)  ### {0: 5754}      #### does not look good here
 
 
 
-
-
-########################
-#  https://www.datacamp.com/tutorial/understanding-logistic-regression-python?dc_referrer=https%3A%2F%2Fwww.google.com%2F
-#########################
-
+######################### 
 
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
 cnf_matrix

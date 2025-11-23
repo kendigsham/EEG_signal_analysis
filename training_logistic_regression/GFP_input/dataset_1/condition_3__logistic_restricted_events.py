@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pickle
 
-x_data_dir = '~/Documents/courses/Individual_project/linear_models/Jasna_dat_try2_GFP_input/condition_3__GFP_data'
+x_data_dir = '/path/to/your/data/linear_models/data_GFP_input/condition_3__GFP_data'
 
 df_data = pd.read_csv(f'{x_data_dir}/df_combined_condition_3__GFP_all_times.csv',index_col=0)
 
@@ -31,9 +31,9 @@ df_data.head()
 df_data.shape  ## (59271, 54)
 
 
-y_label_dir='/home/kenny/Documents/courses/Individual_project/classification_models/Jasna_data/try4_correct_number_of_event_type'
+y_label_dir='/path/to/your/data/classification_models/correct_number_of_event_type'
 
-dir_y_label = f'{y_label_dir}/try_4_df_MEDIAN_y_label.csv'
+dir_y_label = f'{y_label_dir}/df_MEDIAN_y_label.csv'
 
 df_y_label = pd.read_csv(dir_y_label,index_col=0)
 
@@ -134,13 +134,7 @@ Counter(y_pred_balance)  ### {0: 12805}      #### does not look good here
 
 
 
-
-
-
-########################
-#  https://www.datacamp.com/tutorial/understanding-logistic-regression-python?dc_referrer=https%3A%2F%2Fwww.google.com%2F
 #########################
-
 
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
 cnf_matrix
@@ -159,7 +153,7 @@ plt.tight_layout()
 plt.title('Confusion matrix', y=1.1)
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
-plt.savefig('condition_3__GFP_plots_restricted_events/condition_3_confusion_matrix__Jasna_GFPinput.pdf', bbox_inches='tight')
+plt.savefig('condition_3__GFP_plots_restricted_events/condition_3_confusion_matrix__GFPinput.pdf', bbox_inches='tight')
 # plt.show()
 
 # Text(0.5,257.44,'Predicted label');
@@ -181,7 +175,7 @@ auc = metrics.roc_auc_score(y_test, y_pred_proba)
 plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
 plt.legend(loc=4)
 plt.title('ROC curve')
-plt.savefig('condition_3__GFP_plots_restricted_events/condition_3_ROC_curve__Jasna_GFPinput.pdf', bbox_inches='tight')
+plt.savefig('condition_3__GFP_plots_restricted_events/condition_3_ROC_curve__GFPinput.pdf', bbox_inches='tight')
 # plt.show()
 
 

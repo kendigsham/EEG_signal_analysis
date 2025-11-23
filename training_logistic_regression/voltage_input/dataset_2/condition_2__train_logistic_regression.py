@@ -42,7 +42,7 @@ df_data.columns
 #       dtype='object')
 
 
-dir_y_label = 'try3__ss2_get_threshold_for_training/df_MEDIAN_y_label_reject_subject_N_trial.csv'
+dir_y_label = 'ss2_get_threshold_for_training/df_MEDIAN_y_label_reject_subject_N_trial.csv'
 
 
 df_y_label = pd.read_csv(dir_y_label,index_col=0)
@@ -136,9 +136,6 @@ Counter(y_pred_balance)  ### {0: 5754}      #### does not look good here
 
 
 
-
-########################
-#  https://www.datacamp.com/tutorial/understanding-logistic-regression-python?dc_referrer=https%3A%2F%2Fwww.google.com%2F
 #########################
 
 
