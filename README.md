@@ -1,5 +1,5 @@
-### Master's project:
-##### Disambiguating modality specific predictive coding through global field power
+#### Master's project:
+### Disambiguating modality specific predictive coding through global field power
 ###### Abstract:
 The human brain is known to exhibit a heightened mean voltage response approxi-
 mately 300 milliseconds after an unexpected event, a phenomenon observable in EEG
