@@ -6,10 +6,6 @@ Created on Wed Aug  7 09:37:37 2024
 @author: kenny
 """
 
-#### from classification_models/Jasna_data/try3_downsample_threshold/using_MEDIAN/get_downsample_MEDIAN_GFP_threshold.py
-
-
-
 
 import numpy as np
 import pandas as pd
@@ -36,7 +32,7 @@ import pickle
 
 
 
-edited_file_list = glob.glob('/home/kenny/OneDrive/Thierry_Data/dataedited/*_ALL70_interpol.set')
+edited_file_list = glob.glob('/path/to/dataset_1__preprocessed_data/**/*_ALL70_interpol.set')
 
 len(edited_file_list)
 

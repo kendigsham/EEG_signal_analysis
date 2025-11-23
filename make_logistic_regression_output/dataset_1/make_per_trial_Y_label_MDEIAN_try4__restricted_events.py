@@ -6,9 +6,6 @@ Created on Wed Aug  7 10:26:54 2024
 @author: kenny
 """
 
-#######  classification_models/Jasna_data/try3_downsample_threshold/using_MEDIAN/make_per_trial_Y_label_MDEIAN_try1_result.py
-
-
 
 
 
@@ -32,7 +29,7 @@ import mne
 
 
 
-edited_file_list = glob.glob('/home/kenny/OneDrive/Thierry_Data/dataedited/*_ALL70_interpol.set')
+edited_file_list = glob.glob('/path/to/dataset_1__preprocessed_data/**/*_ALL70_interpol.set')
 
 len(edited_file_list)
 
@@ -138,12 +135,12 @@ for temp_file in edited_file_list:
 
 df_combine = pd.concat(dataframe_list)
     
-df_combine.to_csv('try_4_df_MEDIAN_y_label.csv')
+df_combine.to_csv('df_MEDIAN_y_label.csv')
         
 
 df_label_numbers = pd.crosstab(df_combine.participant, df_combine.y_data).reset_index()
             
-df_label_numbers.to_csv('try4_df_y_label_numbers_per_class_per_participant.csv')
+df_label_numbers.to_csv('df_y_label_numbers_per_class_per_participant.csv')
 
 
 
