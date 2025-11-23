@@ -30,10 +30,10 @@ import mne
 import pickle
 
 
-dir_base = '/home/kenny/Documents/courses/Individual_project/Analysis'
+dir_base = '/path/to/dataset_1__preprocessed_data'
 
 
-with open(f'{dir_base}/try4__each_participant_per_event_average_color_GFP_csv.pickle', 'rb') as handle:
+with open(f'{dir_base}/each_participant_per_event_average_color_GFP_csv.pickle', 'rb') as handle:
     df_mean = pickle.load(handle)
 
 
@@ -78,7 +78,7 @@ ax.set_xlabel('time (s)')
     
 fig.tight_layout()
 
-plt.savefig('Jasna_plots/GFP_all_participants.pdf')
+plt.savefig('plots/GFP_all_participants.pdf')
 # plt.show()
 
 

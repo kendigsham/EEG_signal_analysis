@@ -27,12 +27,11 @@ import pickle
 import os
 
 
-dir_base = '/home/kenny/Documents/courses/Individual_project/Analysis'
+dir_base = '/path/to/dataset_1__preprocessed_data'
 
 
 
-df_mean_std = pd.read_csv(f'{dir_base}/try3_average_participant.csv',index_col=0)
-
+df_mean_std = pd.read_csv(f'{dir_base}/average_participant.csv',index_col=0)
 df_mean_std.shape
 
 
@@ -113,7 +112,7 @@ ax.set_xlabel('time (s)')
 
 fig.tight_layout()
 
-plt.savefig('Jasna_plots/MEAN_voltage_all_participants.pdf', bbox_inches='tight')
+plt.savefig('plots/MEAN_voltage_all_participants.pdf', bbox_inches='tight')
 # plt.show()
 
 
