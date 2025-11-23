@@ -6,7 +6,7 @@ Created on Sat Aug 10 18:52:23 2024
 @author: kenny
 """
 
-#### /home/kenny/Documents/courses/Individual_project/classification_models/ERP_core/make_data_condition_3.py
+
 
 import mne
 import glob
@@ -22,11 +22,10 @@ from numpy import random
 import matplotlib.pyplot as plt
 
 
-dir_data = '/home/kenny/Documents/courses/Individual_project/Analysis_ERP_core'
+dir_data = '/path/to/dataset_2__preprocessed_data'
 
 
-file_list = glob.glob('/home/kenny/Documents/courses/Individual_project/Emily_Kappenman/MMN_All_Data_and_Scripts/**/*_MMN_ds_reref_ucbip_hpfilt_ica_corr_cbip_elist_bins_epoch_interp.set')
-
+file_list = glob.glob('/path/to/dataset_2__preprocessed_data/**/*_MMN_ds_reref_ucbip_hpfilt_ica_corr_cbip_elist_bins_epoch_interp.set')
 
 ### from their codes, the paper is using only 39 participant for MMN
 kept_subjects = ['1', '2', '3', '4', '5', '6', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40']
@@ -90,7 +89,7 @@ for temp_file in kept_file_list:
     #################################
     ##
     #################################
-    reject_file_name = f'{dir_data}/try3_rejected_trials/P_{num_participant}.txt'
+    reject_file_name = f'{dir_data}/rejected_trials/P_{num_participant}.txt'
     with open(reject_file_name, 'r') as file:
         content = file.read().strip()
         

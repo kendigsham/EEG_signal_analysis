@@ -31,9 +31,9 @@ import mne
 import pickle
 
 
-dir_base='/home/kenny/Documents/courses/Individual_project/Analysis_ERP_core/try3_plots_for_thesis/'
+dir_base='/path/to/dataset_2__preprocessed_data/ERPcore_plots/'
 
-with open(f'{dir_base}try3__each_participant_per_event_GFP_csv.pickle', 'rb') as handle:
+with open(f'{dir_base}each_participant_per_event_GFP_csv.pickle', 'rb') as handle:
     df_mean = pickle.load(handle)
     
     
